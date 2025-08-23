@@ -11,19 +11,24 @@ class TrafficLightTimer {
      int g = inp.nextInt();
      int y = inp.nextInt();
      
+     int cycle =  r + g + y;
      
      for(int i = 0; i< t; i++){
+         
+         int time = i % cycle;
+         
        String color;
 
-          if(i < r){
+          if(time< r){
               color = "RED";
           }
-          else if(i < r + g){
+          else if(time < r + g){
               color = "GREEN";
           }
           else{
               color = "YELLOW";
           }
+          
           
            System.out.println("Seconds "+ (i+1) + " " + color);
           
